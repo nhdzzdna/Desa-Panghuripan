@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #EBE9DD;
+}
+
+/* Background halaman */
+.login-bg {
+    width: 100%;
+    height: 100vh;
+    background: 
+        linear-gradient(180deg, #003631 0%, rgba(156, 200, 141, 0.5) 50%, rgba(255, 255, 255, 0.4) 100%),
+        url("download (28).jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+/* Container utama login */
+.login-container {
+    width: 1150px;
+    background: #EBE9DD;
+    border-radius: 80px;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    overflow: hidden;
+}
+
+/* Panel kiri */
+.login-left {
+    width: 50%;
+    background: linear-gradient(142deg, #338F13 6%, rgba(255, 241, 92, 0.6) 46%, rgba(156, 200, 141, 0.9) 77%);
+    border-radius: 80px 0 0 80px;
+    position: relative;
+    padding: 60px;
+    color: white;
+}
+
+.login-left h1 {
+    font-size: 75px;
+    line-height: 70px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+/* ilustrasi */
+.left-illustration {
+    width: 500px;
+    margin-top: 40px;
+}
+
+/* Panel kanan*/
+.login-right {
+    width: 50%;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-right h2 {
+    font-size: 50px;
+    color: #4D774F;
+    font-weight: 700;
+    text-align: center;
+}
+
+.login-right p {
+    font-size: 22px;
+    color: #609B4C;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* label */
+.label {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4D774F;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+/* input box */
+.input-box {
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 34px;
+    border: 2px solid #EFB34A;
+    background: #EBE9DD;
+    font-size: 20px;
+}
+
+/* tombol login */
+.btn-login {
+    width: 300px;
+    height: 70px;
+    margin: 40px auto 0;
+    background: #FFC765;
+    border-radius: 40px;
+    border: none;
+    font-size: 40px;
+    font-weight: 700;
+    color: #326334;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+/* teks footer */
+.footer-text {
+    margin-top: 40px;
+    font-size: 18px;
+    color: rgba(54, 27, 6, 0.66);
+    text-align: center;
+}
+
+/* tombol kembali */
+.back-btn {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: #FFC765;
+    border-radius: 34px;
+    padding: 12px 40px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #326334;
+    border: none;
+    box-shadow: 0 0 7px 2px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
