@@ -11,19 +11,19 @@ nav{
     box-shadow: 0px 0px 15px 6px #00000040;
 }
 
-.logo{
+.logo, .logoFooter{
     display: flex;
     gap: 8px;
     align-items: center;
     text-decoration: none;
 }
 
-.logo img{
+.logo img, .logoFooter img{
     width: 41px;
     height: 41px;
 }
 
-.logo p{
+.logo p, .logoFooter p{
     margin: 0;
     font-family: "Plus Jakarta Sans";
     font-weight: 500;
@@ -31,7 +31,7 @@ nav{
     color: white;
 }
 
-.logo h3{
+.logo h3, .logoFooter h3{
     margin: 0;
     font-family: "Marcellus SC";
     font-size: 20px;
@@ -84,9 +84,52 @@ nav{
 .footer{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    background: #164941;
+    background: #003631;
 }
 
 .isiFooter{
-    padding: 50px;
+    padding: 30px 45px;
+}
+
+.copyright p{
+    font-family: Plus Jakarta Sans;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    padding: 25px;
+    color: #efb24a7a;
+}
+
+.copyright hr{
+    border: 1px solid #EFB34A;
+    margin: 0;
+}
+
+.logoFooter p, .logoFooter h3 {
+    color: #EFB34A;
+}
+
+.isiFooter1{
+    width: 323px;
+}
+
+.alamatFooter{
+font-family: Plus Jakarta Sans;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+leading-trim: NONE;
+line-height: 22px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #FFFFFF;
+}
+
+.sloganFooter{
+    font-family: Homemade Apple;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: #EBE9DD;
 }
