@@ -1,0 +1,475 @@
+.landingPage {
+    background: #EBE9DD;
+}
+
+/* ============================= */
+/*            HERO                */
+/* ============================= */
+
+.heroLanding {
+    height: 580px;
+    margin: 0 auto 52px;
+    border-radius: 0 0 50px 50px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../assets/landingPage/bgLandingPage.svg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 18px 34px rgba(0,0,0,0.25);
+
+}
+
+.heroLanding::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 54, 49, 0.78) 0%,
+        rgba(0, 54, 49, 0.55) 40%,
+        rgba(0, 54, 49, 0.15) 100%
+    );
+}
+
+.heroContent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-12px);
+}
+
+.heroContent h1 {
+    font-family: "Marcellus SC", serif;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 82px;
+    text-align: center;
+
+}
+
+.heroTagline {
+    font-family: "Homemade Apple", cursive;
+    color: #EFB34A;
+    margin: 0;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 29px;
+    text-align: center;
+}
+
+
+/* ============================= */
+/*         GALERI SECTION        */
+/* ============================= */
+
+.sectionGaleri {
+    margin: 0 auto;
+    margin-right: 35px;
+}
+
+.wrapperGaleri {
+    background: linear-gradient(2.05deg, #4D774F -30.6%, #15463E 97.74%);
+    border-radius: 0 50px 50px 0;
+    padding: 30px 50px 0 50px;
+    box-shadow: 4px 4px 10px 0px #00000040;
+}
+
+
+.headerGaleri {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerGaleri h2 {
+    font-family: Plus Jakarta Sans;
+    font-weight: 600;
+    font-size: 60px;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+
+.btnSelengkapnya {
+    padding: 12px 30px;
+    background: #EFB34A;
+    color: #FFFFFF;
+    border-radius: 999px;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.listGaleri {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.cardGaleri {
+    background: #F3F0E4;
+    border-radius: 28px 28px 0 0;
+    overflow: hidden;
+    height: 220px;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.22);
+}
+
+.cardGaleri img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================= */
+/*         TENTANG SECTION       */
+/* ============================= */
+
+.sectionTentang {
+    margin: 70px 0;
+}
+
+.tentangWrapper {
+    position: relative;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 100px 90px 110px 90px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.judulTentang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    margin-bottom: -6px;
+}
+
+.judulTentang h2 {
+    font-family: Marcellus SC;
+    font-weight: 400;
+    font-size: 55px;
+    text-align: center;
+    color: #15463E;
+    margin: 0;
+}
+
+.judulTentang .line {
+    position: relative;
+    width: 160px;         
+    height: 2.2px;
+    background: #15463E;
+    opacity: 0.9;
+    top: 5px;
+}
+
+.judulTentang .line::after {
+    content: "";
+    position: absolute;
+    width: 310px;         
+    height: 2px;
+    background: #15463E;
+    right: -70px;             
+    top: 30px;            
+    opacity: 0.9;
+
+}
+
+.subJudulJawa {
+    font-family: "Homemade Apple", cursive;
+    font-size: 40px;
+    color: #15463E;
+    margin-top: -4px;
+    margin-bottom: 25px;
+}
+
+.deskripsiTentang {
+    color: #15463E;
+    max-width: 1104px;
+    margin: 0 auto;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.leaf {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* kiri atas (daun besar gelap) */
+.leaf2 {
+    width: 115px;
+    top: 60px;
+    left: 48px;
+    transform: rotate(-11deg);
+}
+
+/* kiri atas (daun kecil hijau muda) */
+.leaf1 {
+    width: 78px;
+    top: -20px;
+    left: 255px;
+    transform: scaleX(-1) rotate(150deg);
+}
+
+/* kanan bawah (daun kecil gelap) */
+.leaf3 {
+    width: 75px;
+    bottom: -10px;
+    right: 210px;
+    transform: scaleX(-1) rotate(-40deg);
+}
+
+/* kanan bawah (daun besar hijau muda) */
+.leaf4 {
+    width: 115px;
+    bottom: 30px;
+    right: 48px;
+    transform: rotate(0deg);
+}
+
+/* ============================= */
+/*        VISI MISI SECTION      */
+/* ============================= */     
+
+.visiMisi {
+    position: relative;
+    margin-left: 50px;
+}
+
+.boxVisi {
+    background: #003631;
+    color: #FFFFFF;
+    border-radius: 30px 0 0 30px;
+    padding: 35px;
+    height: 385px;
+    box-shadow: 4px 4px 10px 0px #00000080;
+}
+
+.boxVisi h3, .boxMisi h3 {
+    font-family: "Plus Jakarta Sans";
+    color: #EFB34A;
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.boxVisi p {
+    font-family: Plus Jakarta Sans;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 51px;
+    max-width: 305px;
+}
+
+.boxMisi {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 32%;
+    background: #15463E;
+    color: #FFFFFF;
+    border-radius: 26px;
+    padding: 30px;
+    box-shadow: -4px 0px 10px 0px #00000024;
+    border-radius: 30px 0 0 30px;
+}
+
+.boxMisi ol {
+    font-family: Plus Jakarta Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 42px;
+}
+
+.boxMisi li {
+    margin-bottom: 6px;
+    max-width: 95%;
+}
+
+/* ============================= */
+/*      STRUKTUR DESA SECTION    */
+/* ============================= */
+
+.strukturDesa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 587px;    
+    margin: 70px 0;;
+    background: linear-gradient(270deg, rgba(217, 217, 217, 0) 0%, rgba(77, 119, 78, 0.47) 100%);
+}
+
+.strukturWrapper {
+    border-radius: 26px;
+    position: relative;
+    overflow: hidden;
+}
+
+.strukturHeader h2 {
+    color: #15463E;
+    font-family: Plus Jakarta Sans;
+    font-weight: 700;
+    font-size: 50px;
+    margin: 30px 70px 0 70px;
+}
+
+.strukturTrack {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    padding: 40px 70px;
+}
+
+.strukturTrack::-webkit-scrollbar {
+    display: none;
+}
+
+.cardStruktur {
+    border-radius: 22px;
+    background: #FFFFFF;
+    box-shadow: -4px 4px 6px 0px #2D43277A;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 265px;
+    height: 393px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.cardStruktur img {
+    width: 241px;
+    height: 289px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+}
+
+.cardStrukturBody {
+    text-align: center;
+}
+
+.cardStrukturBody .jabatan {
+    font-family: Plus Jakarta Sans;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+    color: #4D774F;
+    margin: 0;
+}
+
+.cardStrukturBody .nama {
+    font-family: Plus Jakarta Sans;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #2D4327;
+    margin: 0;
+}
+
+.navStruktur {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 120px;
+    border-radius: 35px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navStruktur i {
+    font-size: 60px;
+    color: #2D4327;
+    font-weight: 700;
+    text-shadow: -1px 1px 4px #2d4327c1;
+}
+
+.navStruktur.prev {
+    left: 10px;
+    background: 0;
+}
+
+.navStruktur.next {
+    right: 10px;
+    background: 0;
+}
+
+/* ============================= */
+/*      LOKASI DESA SECTION      */
+/* ============================= */
+
+.lokasiDesa {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0;
+}
+
+.lokasiWrapper {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90.15deg, #EFB34A -52.11%, #FFFFFF 99.88%);
+    border-radius: 26px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: -4px 4px 10px rgba(0,0,0,0.15);
+    gap: 32px;
+    height: 363px;
+    border-radius: 40px;
+    margin: 0 60px;
+}
+
+.lokasiMap iframe {
+    width: 586px;
+    height: 320px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px 0px #00000040;
+}
+
+.lokasiInfo h3 {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    font-size: 32px;
+    color: #EFB34A;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.lokasiInfo h3 i {
+    font-size: 28px;
+    color: #EFB34A;
+}
+
+.lokasiInfo p {
+    color: #15463E;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 40px;
+}
