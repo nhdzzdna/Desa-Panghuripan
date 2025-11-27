@@ -1,0 +1,465 @@
+/* ============================= */
+/*     DATA & STATISTIK PAGE     */
+/* ============================= */
+
+.dataStatistikPage {
+    background: linear-gradient(179.94deg, #9CC88D 0.05%, #EBE9DD 50.48%, #164A41 98.51%);
+}
+
+/* ---------- HERO ---------- */
+
+.statHero {
+    margin: 0 auto 70px;
+    border-radius: 0 0 50px 50px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../assets/dataStatistik/bgStatistik.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.statHeroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0 80px 0;
+    gap: 56px;
+}
+
+/* Judul besar + garis di bawah */
+.statHeroTitle {
+    font-family: "Marcellus SC", serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.595);
+    font-size: 60px;
+}
+
+.statHeroTitle div {
+    width: 100%;
+    max-width: 957px;
+    border: 1px solid #ffffff;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.595);
+    margin: 10px 0;
+}
+
+/* ---------- SUMMARY CARDS ---------- */
+
+.statSummaryCards {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.statCard {
+    width: 237px;
+    height: 310px;
+    border-radius: 40px;
+    background: linear-gradient(180deg, #F7F9F7 0%, #5D8D64 100%);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 20px 22px;
+    box-sizing: border-box;
+}
+
+.statIcon {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.statIcon img {
+    width: 133px;
+    height: 124px;
+    object-fit: contain;
+}
+
+.statLabel {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    color: #15463ED9;
+    font-size: 30px;
+    text-align: center;
+    line-height: 35px;
+    margin: 0;
+}
+
+.statValue {
+    width: 100%;
+    color: #FFFFFF;
+    font-family: "Plus Jakarta Sans";
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    background: transparent;
+    margin: 0;
+    padding: 0;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statValue p{
+    text-shadow: 2px 2px 10px 0px #00000040;
+    margin: 0;
+}
+
+.garisCard {
+    width: 90%;
+    border: 1px solid #15463ED9;
+    margin: 8px 0 5px 0;
+}
+
+/* ---------- AGE SECTION ---------- */
+
+.statAgeSection {
+    margin: 40px 0;
+}
+
+.statAgeHeaderWrapper, .statEduHeader {
+    width: fit-content;
+    padding: 30px 60px;
+    border-radius: 0 100px 100px 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, #EFB34A  100%);
+    box-shadow: 0px 5px 10px 0px #0000004D;
+    margin-bottom: 34px;
+}
+
+.statAgeTitle, .statEduTitle h2{
+    margin: 0;
+    color: #15463E;
+    font-family: Plus Jakarta Sans;
+    font-weight: 700;
+    font-size: 45px;
+    padding-right: 40px;
+}
+
+.statAgeChartWrapper {
+    background: #FFFFFF;
+    padding: 24px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statAgeChartWrapper img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ---------- INSIGHT TEKS KELOMPOK USIA ---------- */
+
+.statInsightSection {
+    padding: 0 50px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.statInsightCard {
+    background: linear-gradient(180deg, #22422F 0%, #4C755A 92%);
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px 0px #00000080;
+    padding: 25px 30px;
+    color: #FFFFFF;
+    width: 100%;
+    border-radius: 30px;
+    font-family: Plus Jakarta Sans;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: justify;
+}
+
+/* ---------- HEADER PIL ORANYE UNTUK SECTION2 BAWAH ---------- */
+
+.statJobHeader{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.statJobTitle{
+    margin-bottom: 28px;
+    width: fit-content;
+    padding: 30px 60px;
+    border-radius: 100px 0 0 100px;
+    background: linear-gradient(90deg, #EFB34A 0%, rgba(255, 255, 255, 0.5) 100%);
+    box-shadow: 0px 5px 10px 0px #0000004D;
+    margin-bottom: 34px;
+}
+.statJobTitle h2{
+    margin: 0;
+    color: #15463E;
+    font-family: Plus Jakarta Sans;
+    font-weight: 700;
+    font-size: 45px;
+    padding-left: 40px;
+}
+
+/* ---------- SECTION PEKERJAAN ---------- */
+
+.statJobLayout {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 60px;
+}
+
+#jobChart {
+    background-color: transparent;
+    padding: 22px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.statJobLegend {
+    background: linear-gradient(180deg, #9CC88D 0%, rgba(255, 255, 255, 0.3) 100%);
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.24);
+    padding: 40px 90px 40px 70px;
+    font-family: "Plus Jakarta Sans";
+    color: #15463E;
+}
+
+.statJobLegend h3 {
+    margin: 0 0 12px;
+    font-family: Plus Jakarta Sans;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.statJobLegend ul {
+    margin: 0;
+    padding-left: 30px;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+/* ---------- SECTION PENDIDIKAN (HEADER SAJA DULU) ---------- */
+
+.statEduSection {
+    padding: 60px 0;
+}
+
+.statEduChartWrapper {
+    background: #FFFFFF;
+    padding: 24px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- DATA STATISTIK (BELUM MENIKAH, KELAHIRAN, DLL.) ---------- */
+
+.statExtraSection {
+    padding: 0 60px 90px;
+}
+
+.statExtraWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* pill "Data Statistik" di tengah atas */
+.statExtraHeader {
+    padding: 25px 35px 35px;
+    border-radius: 30px;
+    background: linear-gradient(178.75deg, #EFB34A 0.94%, rgba(254, 209, 129, 0.85) 49.87%, rgba(255, 255, 255, 0.5) 98.81%);
+    box-shadow: 0px 5px 25px 3px #00000040;
+    margin-bottom: 32px;
+    max-width: 640px;
+    width: 100%;
+
+}
+
+.statExtraHeader h2 {
+    margin: 0;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    color: #174A41;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* grid 2x2 kartu */
+.statExtraGrid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* kartu tiap data */
+.statExtraCard {
+    height: 240px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #9CC88D 5.63%, rgba(255, 255, 255, 0.853) 100%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* area ikon (bagian kuning kiri) */
+.statExtraIcon {
+    height: 100%;
+    width: fit-content;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.statExtraIcon img {
+    height: 100%;
+    width: fit-content;
+    object-fit: contain;
+}
+
+.statExtraLabel {
+    color: #0F5B3E;
+    font-family: Plus Jakarta Sans;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 51px;
+    text-align: center;
+}
+
+.statExtraValue {
+    font-family: Plus Jakarta Sans;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 37px;
+    color: #452D06;
+}
+
+.statExtraText{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+
+    .statHeroContent {
+        padding: 40px 20px 60px;
+    }
+
+    .statHeroTitle {
+        font-size: 36px;
+    }
+
+    .statAgeHeaderWrapper, 
+    .statEduHeader {
+        padding: 20px 30px;
+    }
+
+    .statAgeTitle, 
+    .statEduTitle h2,
+    .statJobTitle h2 {
+        font-size: 28px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .statJobTitle {
+        padding: 20px 30px;
+    }
+
+    .statJobLayout {
+        flex-direction: column;
+        gap: 24px;
+        margin: 20px;
+    }
+
+    .statJobLegend {
+        width: 100%;
+        padding: 24px 24px 28px;
+    }
+
+    .statJobLegend h3 {
+        font-size: 24px;
+    }
+
+    .statJobLegend ul {
+        font-size: 20px;
+    }
+
+    .statInsightSection {
+        padding: 0 20px 40px;
+    }
+
+    .statInsightCard {
+        font-size: 18px;
+    }
+
+    .statExtraSection {
+        padding: 0 20px 60px;
+    }
+
+    .statExtraHeader h2 {
+        font-size: 32px;
+    }
+
+    .statExtraCard {
+        height: auto;
+        min-height: 180px;
+    }
+
+    .statExtraLabel {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .statExtraValue {
+        font-size: 24px;
+    }
+}
+
+/* --- SET UKURAN CHART --- */
+
+/* Piramida usia */
+#ageChart {
+    width: 100% !important;
+    height: 420px !important;  /* kamu bisa ubah */
+}
+
+/* Pie pekerjaan */
+#jobChart {
+    width: 100% !important;
+    height: 550px !important;  /* kamu bisa ubah */
+}
+
+/* Bar pendidikan */
+#eduChart {
+    width: 100% !important;
+    height: 380px !important;  /* kamu bisa ubah */
+}
+

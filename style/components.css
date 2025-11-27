@@ -40,10 +40,6 @@ nav{
 }
 
 .menuNav{
-    display: flex;
-}
-
-.menuNav{
     font-family: Plus Jakarta Sans;
     font-weight: 500;
     font-size: 20px;
@@ -52,10 +48,8 @@ nav{
     align-items: center;
 }
 
-.pilihMenu{
-    width: 82px;
-    border-radius: 10px;
-    border: 2px solid #e9b96a;
+.menuWrapper {
+    position: relative;
 }
 
 .menu{
@@ -68,16 +62,245 @@ nav{
     color: white;
 }
 
+.pilihMenu{
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 4px;
+    background: #EFB34A;
+    border-radius: 999px;
+    width: 82px; 
+    transition: transform .3s ease, width .3s ease;
+}
+
 .layananWarga, .btnLogin{
     width: 189px;
     height: 51px;
-    border-radius: 30px;;
+    border-radius: 30px;
     border: 2px solid #EFB34A;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
 }
+
+nav{
+    height: 93px;
+    background-color: #003631;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 15px 6px #00000040;
+}
+
+.menuNav{
+    font-family: Plus Jakarta Sans;
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menuWrapper {
+    position: relative;
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+}
+
+.menuNav a {
+    text-decoration: none;
+    color: white;
+    transition: color .2s ease;
+}
+
+.pilihMenu{
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 4px;
+    background: #EFB34A;
+    border-radius: 999px;
+    width: 82px;
+    transition: transform .3s ease, width .3s ease;
+}
+
+.layananWarga{
+    width: 189px;
+    height: 51px;
+    border-radius: 30px;
+    border: 2px solid #EFB34A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.layananWarga a {
+    color: white;
+    text-decoration: none;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    transition: .2s;
+}
+
+/* TOMBOL HAMBURGER (TAMBAHAN) */
+.navToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* ============================= */
+/*       RESPONSIVE NAVBAR       */
+/* ============================= */
+@media (max-width: 768px) {
+
+    /* supaya logo dan tombol burger selalu satu baris */
+    nav {
+        flex-wrap: nowrap;
+        height: auto;
+        min-height: 70px;
+    }
+
+    /* tampilkan tombol burger, dorong ke kanan */
+    .navToggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* sembunyikan menuNav secara default di mobile */
+    .menuNav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+    /* saat tombol diklik (class is-open dari JS), munculkan menu di bawah logo */
+    .menuNav.is-open {
+        display: flex;
+    }
+
+    /* menu jadi vertikal */
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .layananWarga {
+        align-self: flex-start;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .layananWarga a {
+        font-size: 18px;
+    }
+
+    /* indikator garis bawah bisa disembunyikan di mobile jika mengganggu */
+    .pilihMenu {
+        display: none;
+    }
+}
+
+/* ============================= */
+/*   RESPONSIVE HERO & FEATURED  */
+/* ============================= */
+@media (max-width: 992px) {
+    .beritaHero {
+        height: auto;                 /* jangan paksa 580px di tablet/HP */
+        min-height: 420px;
+    }
+
+    .beritaHeroContent {
+        padding: 24px 20px 32px;
+    }
+
+    .beritaFeatured {
+        height: auto;                 /* biar ngikut konten */
+        padding: 18px 18px;
+    }
+
+    .featuredContent h2 {
+        font-size: 36px;
+    }
+
+    .featuredExcerpt {
+        font-size: 22px;
+        line-height: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+    .beritaHero {
+        height: auto;
+        min-height: 0;
+    }
+
+    .beritaHeroContent {
+        padding: 20px 16px 28px;
+    }
+
+    /* featured jadi stack (gambar atas, teks bawah) */
+    .beritaFeatured {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        height: auto;
+        padding: 16px 16px;
+    }
+
+    .featuredImage img {
+        width: 100%;
+        height: auto;           /* jangan paksa 100% tinggi container */
+        max-height: 260px;
+        object-fit: cover;
+    }
+
+    .featuredContent h1,
+    .beritaHeroContent h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .featuredContent h2 {
+        font-size: 26px;
+        text-align: left;
+    }
+
+    .featuredExcerpt {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .beritaHeroContent h1 {
+        font-size: 30px;
+    }
+
+    .featuredContent h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .featuredExcerpt {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
 
 /*Footer--------------------------------------------*/
 
@@ -89,12 +312,13 @@ nav{
 
 .isiFooter{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;  
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
     padding: 40px 60px;
     color: #EBE9DD;
-    height: 328px;
+    min-height: 328px;
 }
 
 .isiFooter1, .isiFooter2, .isiFooter3, .isiFooter4{
@@ -167,7 +391,6 @@ nav{
     align-items: flex-start;
     gap: 10px;
     margin-bottom: 16px;
-
 }
 
 .kontakItem img {
@@ -243,3 +466,65 @@ nav{
     background: #EFB34A;
 }
 
+/* ---------- RESPONSIVE NAVBAR & FOOTER ---------- */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR: jadi dropdown */
+
+    nav {
+        height: auto;
+        padding: 10px 16px;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .navToggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .menuNav {
+        width: 100%;
+        margin-top: 4px;
+        display: none;                 /* default: tersembunyi */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .menuNav.is-open {
+        display: flex;                 /* tampil ketika tombol diklik */
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .layananWarga {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FOOTER: padding & lebar lebih rapih di mobile */
+
+    .isiFooter1,
+    .isiFooter2,
+    .isiFooter3,
+    .isiFooter4 {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .loginAdmin {
+        justify-content: center;
+    }
+
+    .btnLogin {
+        padding: 10px 32px;
+        font-size: 16px;
+    }
+}

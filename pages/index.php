@@ -1,6 +1,37 @@
 <?php
 require '../config/koneksi.php';
 require '../components/components.php';
+
+// Ambil 3 data galeri terbaru
+$galeriLanding = [];
+$sqlGaleri = "SELECT foto, judul FROM galeri_desa ORDER BY tanggal DESC, id DESC LIMIT 3";
+$resultGaleri = mysqli_query($koneksi, $sqlGaleri);
+
+if ($resultGaleri) {
+    while ($row = mysqli_fetch_assoc($resultGaleri)) {
+        $galeriLanding[] = $row;
+    }
+}
+
+// ---------------------------
+// Data Struktur Perangkat Desa
+// ---------------------------
+$strukturList = [];
+$defaultFotoKosong = 'https://i.pinimg.com/originals/21/d2/9f/21d29f70c61cdfc6a90cf1e53004d22e.png';
+
+$sqlStruktur = "
+    SELECT s.*, p.nama AS penduduk_nama
+    FROM struktur_perangkat_desa s
+    LEFT JOIN penduduk p ON s.penduduk_id = p.id
+    ORDER BY s.urutan ASC, s.id ASC
+";
+$resultStruktur = mysqli_query($koneksi, $sqlStruktur);
+
+if ($resultStruktur) {
+    while ($row = mysqli_fetch_assoc($resultStruktur)) {
+        $strukturList[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +59,37 @@ require '../components/components.php';
                     <a href="../pages/galeriDesa.php" class="btnSelengkapnya">Selengkapnya</a>
                 </div>
                 <div class="listGaleri">
-                    <div class="cardGaleri">
-                        <img src="../assets/landingPage/bertani.jpg" alt="Kegiatan panen di sawah">
-                    </div>
-                    <div class="cardGaleri">
-                        <img src="../assets/landingPage/bertani.jpg" alt="Kegiatan panen di sawah">
-                    </div>
-                    <div class="cardGaleri">
-                        <img src="../assets/landingPage/bertani.jpg" alt="Kegiatan panen di sawah">
-                    </div>
+                    <?php if (!empty($galeriLanding)): ?>
+
+                        <?php foreach ($galeriLanding as $item): 
+                            $src = $item['foto'];
+                            $alt = !empty($item['judul']) ? $item['judul'] : 'Galeri Desa Panghuripan';
+                        ?>
+                            <div class="cardGaleri">
+                                <img 
+                                    src="<?php echo htmlspecialchars($src, ENT_QUOTES, 'UTF-8'); ?>" 
+                                    alt="<?php echo htmlspecialchars($alt, ENT_QUOTES, 'UTF-8'); ?>">
+                            </div>
+                        <?php endforeach; ?>
+
+                    <?php else: ?>
+
+                        <!-- KETERANGAN JIKA GALERI KOSONG (inline style) -->
+                        <p style="
+                            grid-column: 1 / -1;
+                            text-align: center;
+                            font-family: 'Plus Jakarta Sans';
+                            font-size: 20px;
+                            font-weight: 600;
+                            color: white;
+                            padding: 20px 0;
+                        ">
+                            Belum ada foto galeri yang ditambahkan.
+                        </p>
+
+                    <?php endif; ?>
                 </div>
+
             </div>
         </section>
 
@@ -92,45 +144,34 @@ require '../components/components.php';
                 </button>
 
                 <div class="strukturTrack">
-                    <div class="cardStruktur">
-                        <img src="../assets/landingPage/hanbin.jpg" alt="Kepala Desa">
-                        <div class="cardStrukturBody">
-                            <p class="jabatan">Kepala Desa</p>
-                            <p class="nama">Sung Hanbin</p>
-                        </div>
-                    </div>
+                    <?php foreach ($strukturList as $s): ?>
+                        <?php
+                            // Tentukan nama
+                            if (!is_null($s['penduduk_id']) && !empty($s['penduduk_nama'])) {
+                                $nama = $s['penduduk_nama'];
+                            } else {
+                                $nama = 'Jabatan kosong';
+                            }
 
-                    <div class="cardStruktur">
-                        <img src="../assets/landingPage/hanbin.jpg" alt="Sekretaris Desa">
-                        <div class="cardStrukturBody">
-                            <p class="jabatan">Sekretaris Desa</p>
-                            <p class="nama">Sung Hanbin</p>
-                        </div>
-                    </div>
+                            // Tentukan foto: pakai kolom foto jika ada, kalau kosong pakai default
+                            if (!empty($s['foto'])) {
+                                $foto = $s['foto'];
+                            } else {
+                                $foto = $defaultFotoKosong;
+                            }
 
-                    <div class="cardStruktur">
-                        <img src="../assets/landingPage/hanbin.jpg" alt="Kaur Keuangan">
-                        <div class="cardStrukturBody">
-                            <p class="jabatan">Kaur Keuangan</p>
-                            <p class="nama">Sung Hanbin</p>
+                            $jabatan = $s['jabatan'];
+                        ?>
+                        <div class="cardStruktur">
+                            <img 
+                                src="<?php echo htmlspecialchars($foto, ENT_QUOTES, 'UTF-8'); ?>" 
+                                alt="<?php echo htmlspecialchars($jabatan, ENT_QUOTES, 'UTF-8'); ?>">
+                            <div class="cardStrukturBody">
+                                <p class="jabatan"><?php echo htmlspecialchars($jabatan, ENT_QUOTES, 'UTF-8'); ?></p>
+                                <p class="nama"><?php echo htmlspecialchars($nama, ENT_QUOTES, 'UTF-8'); ?></p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="cardStruktur">
-                        <img src="../assets/landingPage/hanbin.jpg" alt="Kasi Pemerintahan">
-                        <div class="cardStrukturBody">
-                            <p class="jabatan">Kasi Pemerintahan</p>
-                            <p class="nama">Sung Hanbin</p>
-                        </div>
-                    </div>
-
-                    <div class="cardStruktur">
-                        <img src="../assets/landingPage/hanbin.jpg" alt="Kasi Pelayanan">
-                        <div class="cardStrukturBody">
-                            <p class="jabatan">Kasi Pelayanan</p>
-                            <p class="nama">Sung Hanbin</p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <button class="navStruktur next" type="button" aria-label="Berikutnya">

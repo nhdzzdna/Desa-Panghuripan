@@ -11,6 +11,7 @@ function head($title){ ?>
     <link rel="stylesheet" href="../style/landingPage.css">
     <link rel="stylesheet" href="../style/dataStatistik.css">
     <link rel="stylesheet" href="../style/beritaPengumuman.css">
+    <link rel="stylesheet" href="../style/layananWarga.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Marcellus+SC&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@ function footer(){ ?>
     <div class="footer">
         <div class="isiFooter">
             <div class="isiFooter1">
-                <a href="../pages/landingPage.php" class="logoFooter">
+                <a href="../pages/index.php" class="logoFooter">
                     <img src="../assets/componentImages/logoFooter.svg" alt="Ikon Desa">
                     <div>
                         <h3>Desa Panghuripan</h3>
@@ -34,7 +35,7 @@ function footer(){ ?>
             </div>
             <div class="isiFooter2">
                 <h3>Menu</h3>
-                <a href="../pages/landingPage.php">Beranda</a>
+                <a href="../pages/index.php">Beranda</a>
                 <a href="../pages/dataStatistik.php">Data dan Statistik</a>
                 <a href="../pages/beritaPengumuman.php">Berita</a>
                 <a href="../pages/layananWarga.php">Layanan Warga</a> 
@@ -84,26 +85,122 @@ function footer(){ ?>
 <?php
 function navbar(){ ?>
     <nav>
-        <a href="../pages/landingPage.php" class="logo">
+        <a href="../pages/index.php" class="logo">
             <img src="../assets/componentImages/logo.svg" alt="Ikon Desa">
             <div>
                 <h3>Desa Panghuripan</h3>
                 <p>Kabupaten Sleman</p>
             </div>
         </a>
+
+        <!-- TOMBOL HAMBURGER UNTUK MOBILE -->
+        <button class="navToggle" id="navToggle" type="button" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+
         <div class="menuNav">
-            <div>
+            <div class="menuWrapper">
                 <div class="menu">
-                    <a href="../pages/landingPage.php">Beranda</a>
+                    <a href="../pages/index.php">Beranda</a>
                     <a href="../pages/dataStatistik.php">Data dan Statistik</a>
-                    <a href="../pages/beritaPengumuman.php">Berita</a>               
+                    <a href="../pages/beritaPengumuman.php">Berita</a>
                 </div>
                 <div class="pilihMenu"></div>
             </div>
-            <div class="layananWarga" >
-                <a href="../pages/layananWarga.php">Layanan Warga</a> 
+
+            <div class="layananWarga">
+                <a href="../pages/layananWarga.php" id="layananLink">Layanan Warga</a>
             </div>
-            
         </div>
     </nav>
+
+    <script>
+    (function () {
+        const menuLinks    = document.querySelectorAll("nav .menu a");
+        const indicator    = document.querySelector("nav .pilihMenu");
+        const wrapper      = document.querySelector("nav .menu");
+        const layananLink  = document.getElementById("layananLink");
+        const layananBox   = layananLink ? layananLink.parentElement : null;
+
+        if (!menuLinks.length || !indicator || !wrapper) return;
+
+        function moveIndicator(active, animate = true) {
+            const rect       = active.getBoundingClientRect();
+            const parentRect = wrapper.getBoundingClientRect();
+
+            if (!animate) {
+                indicator.style.transition = "none";
+            }
+
+            indicator.style.width = rect.width + "px";
+            const left = (rect.left - parentRect.left);
+            indicator.style.transform = "translateX(" + left + "px)";
+
+            menuLinks.forEach(link => {
+                link.style.color = "#FFFFFF";
+            });
+            active.style.color = "#EFB34A";
+
+            if (!animate) {
+                void indicator.offsetWidth;
+                indicator.style.transition = "transform .3s ease, width .3s ease";
+            }
+
+            indicator.style.display = "block";
+
+            if (layananBox && layananLink) {
+                layananBox.style.background   = "transparent";
+                layananBox.style.borderColor  = "#EFB34A";
+                layananLink.style.color       = "#FFFFFF";
+            }
+        }
+
+        menuLinks.forEach(link => {
+            link.addEventListener("click", () => moveIndicator(link, true));
+        });
+
+        const current = window.location.pathname.split("/").pop();
+        let active = menuLinks[0];
+        let isLayanan = false;
+
+        if (current.includes("layananWarga")) {
+            isLayanan = true;
+        }
+
+        if (!isLayanan) {
+            menuLinks.forEach(link => {
+                const href = link.getAttribute("href");
+                if (href && href.indexOf(current) !== -1) {
+                    active = link;
+                }
+            });
+
+            moveIndicator(active, false);
+        } else {
+            indicator.style.display = "none";
+
+            menuLinks.forEach(link => {
+                link.style.color = "#FFFFFF";
+            });
+
+            if (layananBox && layananLink) {
+                layananBox.style.background   = "#EFB34A";
+                layananBox.style.borderColor  = "#EFB34A";
+                layananLink.style.color       = "#FFFFFF";
+            }
+        }
+
+    })();
+
+    // TOGGLE NAVBAR PADA LAYAR KECIL
+    (function () {
+        const toggleBtn = document.getElementById('navToggle');
+        const menuNav   = document.querySelector('nav .menuNav');
+        if (!toggleBtn || !menuNav) return;
+
+        toggleBtn.addEventListener('click', function () {
+            menuNav.classList.toggle('is-open');
+        });
+    })();
+    </script>
 <?php } ?>
