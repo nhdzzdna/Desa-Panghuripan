@@ -1,14 +1,12 @@
 /* BACKGROUND HALAMAN DATA & STATISTIK */
 .penduduk-bg {
-    min-height: calc(100vh - 93px);
-    background: linear-gradient(
-        180deg,
-        #003631 0px,
-        rgba(0, 105, 95, 0.8) 36%,
-        rgba(235, 233, 221, 0.3) 100%
-    );
-    padding: 40px 0 60px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+            min-height: calc(100vh - 93px);
+            background:
+                linear-gradient(180deg, rgba(0, 54, 49, 0.75) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 198, 97, 0.65) 100%),
+                url("../assets/admin/bg dashboard.png");
+            background-size: cover;
+            background-position: center;
+            padding-bottom: 80px;
 }
 
 /* HEADER JUDUL + BUTTON TAMBAH */
@@ -179,6 +177,384 @@
     padding: 20px 0;
     font-style: italic;
 }
+
+/* =================== GLOBAL AREA =================== */
+
+.penduduk-bg {
+    min-height: calc(100vh - 93px);
+    background: linear-gradient(
+        180deg,
+        #003631 0%,
+        rgba(0, 105, 95, 0.8) 36%,
+        rgba(235, 233, 221, 0.3) 100%
+    );
+    padding: 40px 0 60px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* =================== HEADER "DATA & STATISTIK" =================== */
+
+.penduduk-header {
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.penduduk-page-title {
+    font-family: "Marcellus SC", serif;
+    font-size: 56px;
+    margin: 0 0 6px;
+}
+
+.penduduk-page-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FEF0B3;
+    margin: 0;
+}
+
+.btn-tambah-penduduk {
+    background-color: #EFB34A;
+    color: rgba(255, 255, 255, 0.95);
+    padding: 14px 32px;
+    border-radius: 28px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================= CARD TABEL ========================= */
+
+.penduduk-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #EBE9DD;
+    border-radius: 40px;
+    padding: 32px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* Judul + search */
+.penduduk-card-top {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.penduduk-card-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #256128;
+    margin: 0;
+}
+
+.penduduk-search-form {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 55%;
+}
+
+.penduduk-search-input {
+    flex: 1;
+    height: 52px;
+    border-radius: 26px;
+    border: 2px solid #15463E;
+    padding: 0 22px;
+    font-size: 18px;
+}
+
+.penduduk-search-btn {
+    border: none;
+    background-color: #FFC35B;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 32px;
+    border-radius: 26px;
+    cursor: pointer;
+}
+
+/* ========================= TABEL FIX ========================= */
+
+.penduduk-table-wrapper {
+    margin-left: -32px;
+    margin-right: -32px;
+    margin-top: 10px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.penduduk-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+/* Header table */
+.penduduk-table thead {
+    background-color: #15463E;
+    color: #FFFFFF;
+}
+
+.penduduk-table thead th {
+    padding: 18px 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Alternating rows */
+.penduduk-table tbody tr:nth-child(odd) {
+    background-color: #F6F4EB;
+}
+.penduduk-table tbody tr:nth-child(even) {
+    background-color: #B5DDA8;
+}
+
+/* isi cell */
+.penduduk-table tbody td {
+    padding: 16px 20px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* KK / alamat text */
+.kk-text {
+    font-weight: 700;
+}
+.alamat-text {
+    font-size: 14px;
+    color: #2a4e36;
+}
+
+/* Buttons */
+.btn-edit,
+.btn-delete {
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 26px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-edit { background-color: #15463E; }
+.btn-delete { background-color: #CF2326; }
+
+/* =================== FORM TAMBAH / EDIT =================== */
+
+.penduduk-form-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.penduduk-title {
+    font-family: "Marcellus SC", serif;
+    font-size: 56px;
+    color: #ffffff;
+}
+
+.penduduk-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FEF0B3;
+    margin-bottom: 20px;
+}
+
+.form-card-penduduk {
+    background-color: #EBE9DD;
+    border-radius: 40px;
+    padding: 32px 36px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.form-penduduk label {
+    font-weight: 600;
+    color: #256128;
+}
+
+.form-penduduk .form-control,
+.form-penduduk .form-select {
+    border-radius: 28px;
+    border: 2px solid #d8d3c3;
+    padding: 12px 18px;
+    font-size: 16px;
+}
+
+.btn-simpan-penduduk {
+    background-color: #256128;
+    color: #ffffff;
+    border-radius: 28px;
+    padding: 12px 60px;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-kembali-penduduk {
+    border: 2px solid #256128;
+    padding: 12px 32px;
+    border-radius: 28px;
+    text-decoration: none;
+    color: #256128;
+    font-weight: 700;
+}
+
+.btn-kembali-penduduk:hover {
+    background-color: #256128;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .penduduk-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .penduduk-search-form {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* =================== FORM EDIT & TAMBAH PENDUDUK =================== */
+
+/* Wrapper utama form di halaman edit & tambah */
+.penduduk-form-wrapper {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    color: #FFFFFF;
+}
+
+/* Judul besar di atas form (EDIT PENDUDUK / TAMBAH PENDUDUK) */
+.penduduk-form-wrapper .penduduk-page-title {
+    font-family: "Marcellus SC", serif;
+    font-size: 48px;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+    color: #FFFFFF;
+}
+
+/* Subjudul pendek di bawah judul */
+.penduduk-form-wrapper .penduduk-page-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FEF0B3;
+    margin: 0 0 24px;
+}
+
+/* Kartu form (sudah ada, ini hanya sedikit refine jika perlu) */
+.form-card-penduduk {
+    background-color: #EBE9DD;
+    border-radius: 40px;
+    padding: 32px 36px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+/* Label & input di form penduduk */
+.form-penduduk label {
+    font-weight: 600;
+    color: #256128;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.form-penduduk .form-control,
+.form-penduduk .form-select {
+    border-radius: 24px;
+    border: 2px solid #d8d3c3;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: #F8F4E6;
+}
+
+.form-penduduk .form-control:focus,
+.form-penduduk .form-select:focus {
+    outline: none;
+    border-color: #256128;
+    box-shadow: 0 0 0 2px rgba(37,97,40,0.25);
+}
+
+/* Tombol simpan & kembali di bagian bawah form */
+.btn-simpan-penduduk {
+    background-color: #256128;
+    color: #ffffff;
+    border-radius: 28px;
+    padding: 10px 48px;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.btn-simpan-penduduk:hover {
+    background-color: #1c4c21;
+}
+
+.btn-kembali-penduduk {
+    border: 2px solid #256128;
+    padding: 10px 32px;
+    border-radius: 28px;
+    text-decoration: none;
+    color: #256128;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+.btn-kembali-penduduk:hover {
+    background-color: #256128;
+    color: #ffffff;
+}
+
+/* Sedikit spacing antar baris form */
+.form-penduduk .row.g-3 {
+    margin-top: 4px;
+}
+
+/* Responsive: rapikan padding & font di layar kecil */
+@media (max-width: 768px) {
+    .penduduk-form-wrapper {
+        padding: 16px 16px 0;
+    }
+
+    .penduduk-form-wrapper .penduduk-page-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .penduduk-form-wrapper .penduduk-page-subtitle {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .form-card-penduduk {
+        padding: 24px 20px;
+        border-radius: 26px;
+    }
+
+    .btn-simpan-penduduk,
+    .btn-kembali-penduduk {
+        width: 48%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .mt-4.d-flex.justify-content-between {
+        gap: 12px;
+    }
+}
+
+
 
 /* Sedikit responsif */
 @media (max-width: 992px) {
