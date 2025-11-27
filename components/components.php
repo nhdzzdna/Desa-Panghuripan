@@ -204,3 +204,37 @@ function navbar(){ ?>
     })();
     </script>
 <?php } ?>
+
+<?php
+function listAlert($status)
+{
+  $status = trim((string)$status);
+  $msg = '';
+
+  switch ($status) {
+    case 'gagal_login':
+      $msg = 'Error : Gagal login ! Silahkan coba lagi.';
+      break;
+    case 'password_tidak_sama':
+      $msg = 'Error : Password tidak sama dengan data di database.';
+      break;
+    case 'gagal_input':
+      $msg = 'Error : Data belum lengkap. Pastikan semua field wajib terisi.';
+      break;
+    case 'berhasil_simpan':
+      $msg = 'Success : Data berhasil disimpan.';
+      break;
+    case 'berhasil_logout':
+      $msg = 'Success : Berhasil logout.';
+      break;
+    case 'login_dulu':
+      $msg = 'Error : Login terlebih dahulu';
+      break;
+    default:
+      return '';
+  }
+
+  $js_msg = json_encode($msg);
+  return '<script>window.addEventListener("DOMContentLoaded", function(){ alert(' . $js_msg . '); });</script>';
+}
+?>
